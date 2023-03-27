@@ -34,6 +34,7 @@ public class ProductController {
 
     @PostMapping("/")
     public long addProduct(@RequestBody Product newProduct){
+
         return productManagementService.addProduct(newProduct);
     }
 
@@ -49,7 +50,7 @@ public class ProductController {
     }
 
     @PutMapping("/update/{id}")
-    public Product addProduct(@RequestBody Product updatedProduct, @PathVariable(name="id") long id){
+    public Product updateProduct(@RequestBody Product updatedProduct, @PathVariable(name="id") long id){
         return productManagementService.modifyProduct(id,updatedProduct);
     }
 }
