@@ -1,0 +1,32 @@
+DATABASE
+
+**in order to create the table for the database according to product class, execute the following sql script:
+
+CREATE TABLE products_deneme (
+    ID   INTEGER      NOT NULL AUTO_INCREMENT,
+    PRICE			  FLOAT,
+    QUANTITY		  INTEGER,
+    PRODUCT_NAME	  VARCHAR(45),
+    OWNER_NAME	  VARCHAR(45),
+    PRIMARY KEY (id)
+);
+
+**you need to change the following information at application.properties file in order for the database connection:
+
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+
+
+
+USAGE INSTRUCTIONS
+
+get - /api/products/ - lists all the products in the database.
+get - /api/products/search/{searchTerm} - lists all the products containing the searchTerm in their name property.
+get - /api/products/{id} - gets the product with the given id.
+
+post - /api/products/ - adds the product data given in RequestBody to the database.
+
+delete - /api/products/delete/{id} - deletes the product with the given id from the database.
+
+put - /api/products/update/{id} - modifies the product with the given id, according to the product data given in RequestBody.  
